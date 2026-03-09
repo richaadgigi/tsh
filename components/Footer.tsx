@@ -1,57 +1,118 @@
-import { Hexagon } from "lucide-react";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { HexagonIcon, NewTwitterIcon, Github01Icon, Linkedin01Icon } from "@hugeicons/core-free-icons";
 import Link from "next/link";
-import {spaceGrotesk,inter} from "../lib/fonts";
+import Image from "next/image";
+import { spaceGrotesk, inter } from "../lib/fonts";
+import ScrollReveal from "./ScrollReveal";
 
 export default function Footer() {
   return (
-    <footer className="bg-zinc-950 border-t border-white/5 py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-7xl flex flex-col md:flex-row justify-between gap-8 sm:gap-12 md:gap-16 lg:gap-20">
-        <div className="flex flex-col gap-4 w-full md:w-auto md:max-w-xs">
-            <div className="flex items-center gap-2">
-                <Hexagon className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
-                <span className={`text-lg sm:text-xl font-bold text-white ${spaceGrotesk.className}`}>Trade Signal Hive</span> 
-            </div>
-            <p className={`text-muted-foreground text-xs sm:text-sm leading-relaxed ${inter.className}`}>A modern trading signal platform for crypto and forex traders. Accurate, real-time, and reliable.</p>
-        </div>
-        
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-10 md:gap-12 lg:gap-16 w-full md:w-auto">
-            <div className="flex flex-col gap-3 sm:gap-4">
-                <h3 className={`text-sm sm:text-base font-semibold text-white ${spaceGrotesk.className}`}>Quick Links</h3>
-                <ul className="flex flex-col gap-2 text-xs sm:text-sm text-muted-foreground">
-                    <li><Link href="#features" className={`hover:text-primary transition-colors ${inter.className}`}>Features</Link></li>
-                    <li><Link href="#pricing" className={`hover:text-primary transition-colors ${inter.className}`}>Pricing</Link></li>
-                    <li><Link href="#faq" className={`hover:text-primary transition-colors ${inter.className}`}>FAQ</Link></li>
-                    <li><Link href="#testimonials" className={`hover:text-primary transition-colors ${inter.className}`}>Testimonials</Link></li>
-                </ul>
+    <footer className="bg-black/80 border-t border-white/5 py-20 relative overflow-hidden">
+      <ScrollReveal variant="fade-up" stagger={0.2}>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-px bg-white/10" />
+
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-16">
+
+            <div className="md:col-span-4 space-y-8">
+              <Link href="/" className="flex items-center gap-3">
+                <div className="relative w-10 h-10">
+                  <Image
+                    src="https://res.cloudinary.com/xnyder/image/upload/v1743325093/crypto-trade-signal-hive/brand/new-ctsh-logo_motwjq.png"
+                    alt="Trade Signal Hive Logo"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+                <span className={`${spaceGrotesk.className} text-2xl font-bold text-white`}>
+                  Trade Signal <span className="text-primary">Hive</span>
+                </span>
+              </Link>
+              <p className={`${inter.className} text-muted-foreground text-lg leading-relaxed max-w-sm`}>
+                The institutional-grade trading signal platform for the next generation of asset managers.
+                Accurate. Real-time. Professional.
+              </p>
+              <div className="flex gap-4">
+                {[NewTwitterIcon, Github01Icon, Linkedin01Icon].map((icon, idx) => (
+                  <Link key={idx} href="#" className="h-10 w-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary hover:text-black transition-all">
+                    <HugeiconsIcon icon={icon} size={20} />
+                  </Link>
+                ))}
+              </div>
             </div>
 
-            <div className="flex flex-col gap-3 sm:gap-4">
-                <h3 className={`text-sm sm:text-base font-semibold text-white ${spaceGrotesk.className}`}>Resources</h3>
-                <ul className="flex flex-col gap-2 text-xs sm:text-sm text-muted-foreground">
-                    <li><Link href="#trading-signals" className={`hover:text-primary transition-colors ${inter.className}`}>Trading Signals</Link></li>
-                    <li><Link href="#live-chat" className={`hover:text-primary transition-colors ${inter.className}`}>Live Chat</Link></li>
-                    <li><Link href="#help-center" className={`hover:text-primary transition-colors ${inter.className}`}>Help Center</Link></li>
-                    <li><Link href="#community-forum" className={`hover:text-primary transition-colors ${inter.className}`}>Community Forum</Link></li>
+            <div className="md:col-span-8 grid grid-cols-2 sm:grid-cols-3 gap-12">
+              <div className="space-y-6">
+                <h3 className={`${spaceGrotesk.className} text-lg font-bold text-white uppercase tracking-wider`}>Platform</h3>
+                <ul className="space-y-4">
+                  <li>
+                    <Link href="/copy-trading" className="text-muted-foreground hover:text-primary transition-colors">
+                      Copy Trading
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/faq" className="text-muted-foreground hover:text-primary transition-colors">
+                      FAQ
+                    </Link>
+                  </li>
+                  {["Features", "Pricing", "Real-Time Data"].map((item) => (
+                    <li key={item}>
+                      <Link href={`#${item.toLowerCase().replace(" ", "-")}`} className="text-muted-foreground hover:text-primary transition-colors">
+                        {item}
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
-            </div>
+              </div>
 
-            <div className="flex flex-col gap-3 sm:gap-4">
-                <h3 className={`text-sm sm:text-base font-semibold text-white ${spaceGrotesk.className}`}>Legal</h3>
-                <ul className="flex flex-col gap-2 text-xs sm:text-sm text-muted-foreground">
-                    <li><Link href="#terms" className={`hover:text-primary transition-colors ${inter.className}`}>Terms of Use</Link></li>
-                    <li><Link href="#privacy" className={`hover:text-primary transition-colors ${inter.className}`}>Privacy Policy</Link></li>
-                    <li><Link href="#cookie" className={`hover:text-primary transition-colors ${inter.className}`}>Cookie Policy</Link></li>
-                    <li><Link href="#compliance" className={`hover:text-primary transition-colors ${inter.className}`}>Compliance</Link></li>
+              <div className="space-y-6">
+                <h3 className={`${spaceGrotesk.className} text-lg font-bold text-white uppercase tracking-wider`}>Company</h3>
+                <ul className="space-y-4">
+                  <li>
+                    <Link href="/about" className="text-muted-foreground hover:text-primary transition-colors">
+                      About Us
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/contact" className="text-muted-foreground hover:text-primary transition-colors">
+                      Contact
+                    </Link>
+                  </li>
+                  {["Careers"].map((item) => (
+                    <li key={item}>
+                      <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                        {item}
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
+              </div>
+
+              <div className="space-y-6">
+                <h3 className={`${spaceGrotesk.className} text-lg font-bold text-white uppercase tracking-wider`}>Legal</h3>
+                <ul className="space-y-4">
+                  {["Terms of Service", "Privacy Policy", "Risk Disclosure", "Compliance"].map((item) => (
+                    <li key={item}>
+                      <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                        {item}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
+          </div>
+
+          <div className="mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+            <p className="text-sm text-muted-foreground">&copy; {new Date().getFullYear()} Trade Signal Hive. All rights reserved.</p>
+            <div className="flex items-center gap-6 text-sm text-muted-foreground">
+              <Link href="#" className="hover:text-white transition-colors">Status</Link>
+              <Link href="#" className="hover:text-white transition-colors">Security</Link>
+              <Link href="#" className="hover:text-white transition-colors">Cookies</Link>
+            </div>
+          </div>
         </div>
-      </div>
-      <div className="mx-auto max-w-7xl mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-center sm:justify-between items-center gap-4 text-center sm:text-left">
-        <p className="text-xs text-muted-foreground order-2 sm:order-1">&copy; {new Date().getFullYear()} Trade Signal Hive. All rights reserved.</p>
-        <div className="flex gap-4 order-1 sm:order-2">
-             {/* tech stack placeholders icons or social links could go here */}
-        </div>
-      </div>
+      </ScrollReveal>
     </footer>
-  )
+  );
 }

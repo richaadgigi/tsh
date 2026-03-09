@@ -1,45 +1,62 @@
+"use client";
+
 import Link from "next/link";
-import { Bookmark } from "lucide-react";
-import { spaceGrotesk,inter } from "../lib/fonts";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { News01Icon, ArrowRight01Icon } from "@hugeicons/core-free-icons";
+import { spaceGrotesk, inter } from "../lib/fonts";
+import ScrollReveal from "./ScrollReveal";
+import TradingViewNews from "./TradingViewNews";
 
 export default function Features() {
   return (
-    <section>
-      <div className="flex justify-between ">
-        <div className="ml-50 mt-50 w-1/2 p-3">
-          <h2 className="text-4x1 font-bold text-primary mt-3 mb-3">MARKET INSIGHTS</h2>
-          <h2 className={`news-text text-4xl font-bold mb-3 ${spaceGrotesk.className}`}>Lastest Market News <br />and Trending To Updates</h2>
-          <p className={`text-sm text-gray-500 ${inter.className}`}>stay informed withthe latest market developments, breaking business <br />
-          news, and trending financial stories to make smarter, timely trading <br /> 
-          and investment decisions.
-          </p>
-          <Link href="/dashboard" className="read-more bg-primary rounded-full mt-10 inline-block text-black"><button>Read More</button></Link>
+    <section className="py-24 relative overflow-hidden">
+      <div className="container mx-auto px-6">
+        <div className="flex flex-col lg:flex-row gap-16 items-center">
+
+          {/* Content Side */}
+          <div className="flex-1 text-center lg:text-left">
+            <ScrollReveal variant="fade-right">
+              <div className="inline-flex items-center gap-2 mb-6">
+                <HugeiconsIcon icon={News01Icon} size={20} className="text-primary" />
+                <h2 className="text-sm font-bold text-primary tracking-widest uppercase mt-0 mb-0">Market Insights</h2>
+              </div>
+              <h2 className={`${spaceGrotesk.className} text-4xl md:text-5xl font-bold text-white mb-8 leading-[1.1]`}>
+                Latest Market News <br />
+                <span className="text-primary">Trending Updates</span>
+              </h2>
+              <p className={`${inter.className} text-lg text-muted-foreground mb-10 max-xl leading-relaxed`}>
+                Stay ahead of the curve with breaking developments and trending stories from the financial world.
+                Knowledge is your greatest asset in the market.
+              </p>
+              <Link
+                href="/dashboard"
+                className="inline-flex items-center gap-2 bg-white/5 border border-white/10 text-white px-8 py-4 rounded-full font-bold hover:bg-primary hover:text-black transition-all group"
+              >
+                Read Full Report
+                <HugeiconsIcon icon={ArrowRight01Icon} size={20} className="group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </ScrollReveal>
+          </div>
+
+          {/* News Widget Side */}
+          <div className="flex-1 w-full max-w-2xl">
+            <ScrollReveal variant="fade-left" delay={0.2}>
+              <div className="glass border-white/5 rounded-[2.5rem] p-8 md:p-12 overflow-hidden">
+                <TradingViewNews />
+              </div>
+            </ScrollReveal>
+          </div>
+
         </div>
-        <div className="benz mr-50 mt-50 p-3 text-white items-center bg-white rounded-xl h-100">
-          <div className="bg-black mb-3 p-3 rounded-xl">
-            <div className="flex items-center">
-              <Bookmark className="pr-2"/>
-              <p className={`${inter.className}`}>Snap Just Bought A Student Calendar App: How could Be Reinvent Snapchat</p>
-            </div>
-            <p className={`text-sm text-gray-500 pt-3 pl-5 ${inter.className}`}>Benzing . 1d ago</p>
+
+        <ScrollReveal variant="fade-up" delay={0.6}>
+          <div className="mt-16 pt-8 border-t border-white/5 max-w-xl text-center md:text-left mx-auto md:mx-0">
+            <h4 className={`${spaceGrotesk.className} text-xl font-bold text-white mb-4`}>Up to the minute analysis</h4>
+            <p className="text-muted-foreground">
+              Inform your decisions with timely dispatches from our large team of global analysts.
+            </p>
           </div>
-          <div className="bg-black mb-3 p-3 rounded-xl">
-           <div className="flex items-center">
-             <Bookmark className="pr-2 "/>
-            <p className={inter.className}>Deal Dispatch: Boston Red Sox Owner sets <br />
-            Sights On La Liga Club, At Home Files For <br />
-            Bankrupty</p>
-           </div>
-           <p className={`text-sm text-gray-500 pt-3 pl-5 ${inter.className}`}>Benzing . 1d ago</p>
-          </div>
-          <div className="bg-black p-3 mb-3 rounded-xl">
-            <div className="flex items-center ">
-              <Bookmark className="pr-2 text-white" />
-            <p className={inter.className}>BREAKINGVIEWS-LA Lakers deal etches `Showtime` on trophy assets</p>
-            </div>
-            <p className={`text-sm text-gray-500 pt-3 pl-5 ${inter.className}`}>Benzing . 1d ago</p>
-          </div>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );

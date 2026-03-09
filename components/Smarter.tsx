@@ -1,111 +1,77 @@
 "use client";
 
-import { ArrowUpRight } from "lucide-react";
-import {spaceGrotesk,inter} from "../lib/fonts"
+import { spaceGrotesk, inter } from "../lib/fonts";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { Shield01Icon, ZapIcon, BarChartIcon, AnalyticsUpIcon } from "@hugeicons/core-free-icons";
+import ScrollReveal from "./ScrollReveal";
+import TradingViewQuotes from "./TradingViewQuotes";
 
-export default function Dashboard() {
+export default function Smarter() {
   return (
-    <div className="min-h-screen bg-[#050b0f] p-6 text-white">
-      <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
-        {/* Left big card */}
-        <div className="rounded-3xl bg-linear-to-br from-cyan-600/30 to-black p-6 shadow-xl">
-          <div className="mb-6 flex items-center justify-between">
-            <h1 className={`text-3xl font-semibold ${spaceGrotesk.className}`}>
-              Top Stocks Driving<br />Smarter Trading Insights
-            </h1>
-            <button className="rounded-full bg-white/10 p-3">
-              <ArrowUpRight />
-            </button>
+    <section className="py-24 relative overflow-hidden bg-black/40">
+      <div className="container mx-auto px-6">
+        <div className="flex flex-col lg:flex-row items-center gap-16">
+          <div className="flex-1 w-full">
+            <ScrollReveal variant="fade-right">
+              <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary border border-primary/20 mb-6">
+                <HugeiconsIcon icon={Shield01Icon} size={24} />
+              </div>
+              <h2 className={`${spaceGrotesk.className} text-4xl md:text-5xl font-bold text-white mb-6 leading-tight`}>
+                Institutional Insights <br />
+                <span className="text-primary">At Your Fingertips</span>
+              </h2>
+              <p className={`${inter.className} text-muted-foreground text-lg max-w-md leading-relaxed`}>
+                Track elite performers and see what drives the market. We provide the data, you make the move.
+              </p>
+            </ScrollReveal>
           </div>
-          <p className={`mb-6 text-white/70 ${inter.className}`}>
-            Track top stocks like Apple, Tesla, Amazon and NVIDIA for smarter
-            investing decisions
-          </p>
-          <button className="mb-8 rounded-full bg-white/10 px-5 py-2">
-            Start Trading Now
-          </button>
 
-          <div className="space-y-4">
-            {[
-              { name: "AAPL", company: "Apple Inc.", up: true },
-              { name: "TSLA", company: "Tesla, Inc.", up: false },
-              { name: "AMZN", company: "Amazon.com, Inc.", up: true },
-              { name: "NVDA", company: "NVIDIA Corporation", up: true },
-            ].map((stock) => (
-              <div
-                key={stock.name}
-                className="flex items-center justify-between rounded-2xl bg-white/5 p-4"
-              >
-                <div>
-                  <p className="font-semibold">{stock.name}</p>
-                  <p className="text-sm text-white/60">{stock.company}</p>
-                </div>
-                <div className="text-right">
-                  <p>$132.843</p>
-                  <p
-                    className={`text-sm ${stock.up ? "text-emerald-400" : "text-red-400"}`}
-                  >
-                    {stock.up ? "▲" : "▼"} 8.78%
-                  </p>
+          <div className="flex-1 w-full relative">
+            <ScrollReveal variant="scale" duration={1.2}>
+              <div className="absolute -inset-4 bg-primary/10 blur-[80px] rounded-full" />
+              <div className="relative glass border-white/5 rounded-[3.5rem] p-1 shadow-2xl overflow-hidden">
+                <div className="absolute top-0 left-0 w-full h-1 bg-primary/20" />
+                <div className="p-8 md:p-12">
+                  <TradingViewQuotes />
                 </div>
               </div>
-            ))}
+            </ScrollReveal>
           </div>
         </div>
 
-        {/* Right cards */}
-        <div className="grid grid-cols-1 gap-6">
-          <div className="rounded-3xl bg-linear-to-br from-cyan-500/30 to-black p-6 shadow-xl">
-            <div className="mb-4 flex items-center justify-between">
-              <h2 className={`text-2xl font-semibold ${spaceGrotesk.className}`}>
-                Get intelligent trading<br />suggestions with AI insights
-              </h2>
-              <button className="rounded-full bg-white/10 p-3">
-                <ArrowUpRight />
-              </button>
-            </div>
-            <p className={`mb-4 text-white/70 ${inter.className}`}>
-              Get AI-powered trading suggestions to make smarter, faster and
-              confident investment decisions daily
-            </p>
-            <button className="rounded-full bg-white/10 px-5 py-2">
-              Invest Today
-            </button>
-          </div>
-
-          <div className="rounded-3xl bg-linear-to-br from-cyan-600/30 to-black p-6 shadow-xl">
-            <div className="mb-4 flex items-center justify-between">
-              <h2 className={`text-2xl font-semibold ${spaceGrotesk.className}`}>
-                Track Leading<br />Stocks and Market Indices
-              </h2>
-              <button className="rounded-full bg-white/10 p-3">
-                <ArrowUpRight />
-              </button>
-            </div>
-            <p className={`mb-6 text-white/70 ${inter.className}`}>
-              Monitor Dow Jones, NASDAQ and top stocks like Apple in real-time
-              to make smarter trading decisions
-            </p>
-            <button className="mb-6 rounded-full bg-white/10 px-5 py-2">
-              View Stocks
-            </button>
-
-            <div className="grid grid-cols-3 gap-4">
-              {["Dow Jones", "NASDAQ", "AAPL"].map((item) => (
-                <div
-                  key={item}
-                  className="rounded-2xl bg-white/5 p-4 text-center"
-                >
-                  <p className="text-sm">{item}</p>
-                  <p className="mt-2 font-semibold">$132.843</p>
-                  <p className="text-sm text-emerald-400">▲ 8.78%</p>
+        {/* Highlight Grid */}
+        <div className="mt-24">
+          <ScrollReveal variant="fade-up" stagger={0.15}>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[
+                {
+                  icon: ZapIcon,
+                  title: "Instant Execution",
+                  desc: "Low-latency signals delivered straight to your dashboard."
+                },
+                {
+                  icon: BarChartIcon,
+                  title: "In-depth Analytics",
+                  desc: "Institutional-grade data synthesized for clear decisions."
+                },
+                {
+                  icon: AnalyticsUpIcon,
+                  title: "Profit Tracking",
+                  desc: "Real-time PnL insights with automated history logs."
+                }
+              ].map((item, idx) => (
+                <div key={idx} className="group p-8 md:p-12 rounded-[2.5rem] bg-white/[0.02] border border-white/5 hover:border-primary/20 transition-all duration-500">
+                  <div className="h-14 w-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-8 border border-primary/20 group-hover:bg-primary group-hover:text-black transition-all">
+                    <HugeiconsIcon icon={item.icon} size={28} />
+                  </div>
+                  <h4 className={`${spaceGrotesk.className} text-xl font-bold text-white mb-4`}>{item.title}</h4>
+                  <p className="text-muted-foreground leading-relaxed italic">{item.desc}</p>
                 </div>
               ))}
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </div>
-
-    </div>
+    </section>
   );
 }

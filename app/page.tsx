@@ -2,8 +2,8 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import RealTime from "@/components/RealTime";
 import Features from "@/components/Features";
-import Tools from "@/components/Tools";
-import Plan from "@/components/Plan";
+import ExpertNetwork from "@/components/ExpertNetwork";
+import SecurityScale from "@/components/SecurityScale";
 import Smarter from "@/components/Smarter";
 import Investor from "@/components/Investor";
 import EasyHelp from "@/components/EasyHelp";
@@ -17,14 +17,12 @@ export default function Home() {
         <Hero />
       </section>
       <RealTime />
+      <ExpertNetwork />
       <section id="company">
         <Smarter />
       </section>
+      <SecurityScale />
       <Features />
-      <section id="copy-trading">
-        <Tools />
-      </section>
-      <Plan />
       <Investor />
       <section id="faq">
         <EasyHelp />
