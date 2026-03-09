@@ -51,9 +51,6 @@ export default function RealTime() {
                   </Link>
                 </div>
               </div>
-              <div className="absolute bottom-0 right-0 p-8 opacity-20 group-hover:opacity-40 transition-opacity">
-                <HugeiconsIcon icon={AnalyticsUpIcon} size={128} className="text-primary" />
-              </div>
             </div>
           </ScrollReveal>
 
@@ -78,9 +75,6 @@ export default function RealTime() {
                     Manage Portfolio <HugeiconsIcon icon={ArrowUpRight01Icon} size={20} />
                   </Link>
                 </div>
-              </div>
-              <div className="absolute bottom-0 right-0 p-8 opacity-20 group-hover:opacity-40 transition-opacity">
-                <HugeiconsIcon icon={BarChartIcon} size={128} className="text-secondary" />
               </div>
             </div>
           </ScrollReveal>
