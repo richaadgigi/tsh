@@ -36,7 +36,7 @@ export default function Navbar() {
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6">
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="relative w-16 h-16">
+            <div className="relative w-20 h-20">
               <Image
                 src="https://res.cloudinary.com/xnyder/image/upload/v1743325093/crypto-trade-signal-hive/brand/new-ctsh-logo_motwjq.png"
                 alt="Trade Signal Hive Logo"
@@ -106,7 +106,7 @@ export default function Navbar() {
           {/* Mobile Header */}
           <div className="flex items-center justify-between px-6 py-5 border-b border-white/5 bg-black">
             <Link href="/" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-2">
-              <div className="relative w-12 h-12">
+              <div className="relative w-16 h-16">
                 <Image
                   src="https://res.cloudinary.com/xnyder/image/upload/v1743325093/crypto-trade-signal-hive/brand/new-ctsh-logo_motwjq.png"
                   alt="Trade Signal Hive Logo"

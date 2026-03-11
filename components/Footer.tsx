@@ -16,7 +16,7 @@ export default function Footer() {
 
             <div className="md:col-span-4 space-y-8">
               <Link href="/" className="flex items-center gap-3">
-                <div className="relative w-14 h-14">
+                <div className="relative w-20 h-20">
                   <Image
                     src="https://res.cloudinary.com/xnyder/image/upload/v1743325093/crypto-trade-signal-hive/brand/new-ctsh-logo_motwjq.png"
                     alt="Trade Signal Hive Logo"
@@ -24,9 +24,6 @@ export default function Footer() {
                     className="object-contain"
                   />
                 </div>
-                <span className={`${spaceGrotesk.className} text-2xl font-bold text-white`}>
-                  Trade Signal <span className="text-primary">Hive</span>
-                </span>
               </Link>
               <p className={`${inter.className} text-muted-foreground text-lg leading-relaxed max-w-sm`}>
                 The institutional-grade trading signal platform for the next generation of asset managers.
