@@ -201,7 +201,7 @@ export default function MediaPage() {
                         <div className="flex-1 min-w-0">
                             <button
                                 onClick={() => setPlayingVideoId(null)}
-                                className="flex items-center gap-2 text-muted-foreground hover:text-white transition-colors mb-6 group"
+                                className="flex items-center gap-2 text-muted-foreground hover:text-white transition-all mb-6 group cursor-pointer active:scale-95"
                             >
                                 <HugeiconsIcon icon={ArrowLeft02Icon} size={20} className="group-hover:-translate-x-1 transition-transform" />
                                 <span className="text-sm font-bold uppercase tracking-widest">Back to Gallery</span>
