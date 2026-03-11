@@ -44,7 +44,7 @@ export default function RealTime() {
                 </p>
                 <div className="mt-auto">
                   <Link
-                    href="/dashboard"
+                    href="https://app.tradesignalhive.com/auth/signup" target="_blank"
                     className="inline-flex items-center gap-2 text-primary font-bold hover:gap-3 transition-all"
                   >
                     Explore Insights <HugeiconsIcon icon={ArrowUpRight01Icon} size={20} />
@@ -69,7 +69,7 @@ export default function RealTime() {
                 </p>
                 <div className="mt-auto">
                   <Link
-                    href="/dashboard"
+                    href="https://app.tradesignalhive.com/auth/signup" target="_blank"
                     className="inline-flex items-center gap-2 text-secondary font-bold hover:gap-3 transition-all"
                   >
                     Manage Portfolio <HugeiconsIcon icon={ArrowUpRight01Icon} size={20} />
@@ -92,7 +92,7 @@ export default function RealTime() {
                     <p className="text-muted-foreground text-lg">Join 40,000+ traders scaling their wealth.</p>
                   </div>
                   <Link
-                    href="/dashboard"
+                    href="https://app.tradesignalhive.com/auth/signup" target="_blank"
                     className="bg-primary text-black px-10 py-5 rounded-full text-xl font-bold shadow-lg hover:shadow-primary/20 hover:scale-105 transition-all w-full md:w-auto text-center"
                   >
                     Join Hive Now

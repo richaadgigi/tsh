@@ -4,6 +4,7 @@ import { spaceGrotesk, inter } from "@/lib/fonts";
 import { HugeiconsIcon } from "@hugeicons/react";
 import {
     Shield01Icon,
+    CheckmarkBadge02Icon,
     CheckmarkCircle02Icon,
     Cancel01Icon,
     AnalyticsUpIcon,
@@ -18,19 +19,7 @@ import {
 import Link from "next/link";
 import NextImage from "next/image";
 import ScrollReveal from "@/components/ScrollReveal";
-
-const traders = [
-    { name: "Aura Wright", min: "1,000.00", image: "https://i.pravatar.cc/150?u=Aura" },
-    { name: "Raghee Horner", min: "5,000.00", image: "https://i.pravatar.cc/150?u=Raghee" },
-    { name: "Jason Pizzino", min: "6,000.00", image: "https://i.pravatar.cc/150?u=Jason" },
-    { name: "Michael Pizzino", min: "10,000.00", image: "https://i.pravatar.cc/150?u=Michael" },
-    { name: "TG Watkins", min: "800.00", image: "https://i.pravatar.cc/150?u=TG" },
-    { name: "Boris Schlossberg", min: "5,000.00", image: "https://i.pravatar.cc/150?u=Boris" },
-    { name: "Kathy Lien", min: "1,000.00", image: "https://i.pravatar.cc/150?u=Kathy" },
-    { name: "Allison Trades", min: "800.00", image: "https://i.pravatar.cc/150?u=Allison" },
-    { name: "Crypto Megan", min: "2,000.00", image: "https://i.pravatar.cc/150?u=Megan" },
-    { name: "Danielle Shay", min: "1,000.00", image: "https://i.pravatar.cc/150?u=Danielle" },
-];
+import { copyTraderApi, CopyTrader } from "@/lib/api";
 
 const comparison = [
     { feature: "Start Trading with little trading experience", manual: false, copy: true },
@@ -40,7 +29,18 @@ const comparison = [
     { feature: "Choose a trading strategy that suits your style", manual: true, copy: true },
 ];
 
-export default function CopyTradingPage() {
+export default async function CopyTradingPage() {
+
+    let traders: CopyTrader[] = [];
+    try {
+        const response = await copyTraderApi.getCopyTraders();
+        if (response.status && Array.isArray(response.data)) {
+            traders = response.data;
+        }
+    } catch (error) {
+        console.error("Failed to fetch copy traders:", error);
+    }
+
     return (
         <main className="min-h-screen bg-background text-foreground">
             <Navbar />
@@ -78,7 +78,7 @@ export default function CopyTradingPage() {
                     </ScrollReveal>
                     <ScrollReveal variant="fade-up" delay={0.8}>
                         <Link
-                            href="/dashboard"
+                            href="https://app.tradesignalhive.com/auth/signup" target="_blank"
                             className="inline-flex items-center justify-center gap-3 bg-primary text-black px-12 py-5 rounded-full text-xl font-bold hover:scale-105 transition-all shadow-[0_0_30px_rgba(0,242,254,0.3)]"
                         >
                             Get Started <HugeiconsIcon icon={ArrowRight01Icon} size={24} />
@@ -109,17 +109,14 @@ export default function CopyTradingPage() {
                         </div>
                         <div className="flex-1 relative aspect-square w-full max-w-[500px]">
                             <ScrollReveal variant="scale" delay={0.3}>
-                                <div className="absolute inset-0 bg-primary/5 rounded-full blur-3xl" />
-                                <div className="relative z-10 glass-morphism rounded-[3rem] p-8 md:p-12 border-white/10 h-full flex flex-col justify-center gap-8">
-                                    <div className="flex items-center gap-6">
-                                        <div className="h-16 w-16 rounded-full bg-white/5 border border-white/10" />
-                                        <div className="h-4 w-32 bg-white/10 rounded-full" />
-                                    </div>
-                                    <div className="h-32 w-full bg-white/5 rounded-3xl border border-white/10 border-dashed" />
-                                    <div className="flex justify-between items-center px-4">
-                                        <div className="h-8 w-8 bg-primary rounded-lg" />
-                                        <div className="h-8 w-24 bg-white/10 rounded-full" />
-                                    </div>
+                                <div className="relative aspect-square w-full rounded-[3rem] overflow-hidden shadow-2xl border border-white/10 group">
+                                    <NextImage
+                                        src="/images/investing-feature.png"
+                                        alt="Investing Made Easy"
+                                        fill
+                                        className="object-cover group-hover:scale-110 transition-transform duration-700"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
                                 </div>
                             </ScrollReveal>
                         </div>
@@ -180,8 +177,9 @@ export default function CopyTradingPage() {
                     </ScrollReveal>
 
                     <ScrollReveal variant="scale" delay={0.2}>
-                        <div className="max-w-4xl mx-auto overflow-x-auto">
-                            <div className="min-w-[700px] glass-morphism rounded-[2.5rem] border-white/10 overflow-hidden text-white">
+                        <div className="max-w-4xl mx-auto">
+                            {/* Desktop Table View */}
+                            <div className="hidden md:block glass-morphism rounded-[2.5rem] border-white/10 overflow-hidden text-white">
                                 <table className="w-full text-left">
                                     <thead>
                                         <tr className="border-b border-white/5">
@@ -209,6 +207,40 @@ export default function CopyTradingPage() {
                                     </tbody>
                                 </table>
                             </div>
+
+                            {/* Mobile Card View */}
+                            <div className="md:hidden space-y-6">
+                                {comparison.map((row, idx) => (
+                                    <div key={idx} className="glass-morphism rounded-3xl p-6 border-white/10 space-y-4">
+                                        <h4 className="text-white font-bold text-lg leading-snug">{row.feature}</h4>
+                                        <div className="grid grid-cols-2 gap-4 pt-4 border-t border-white/5">
+                                            <div className="space-y-2">
+                                                <span className="text-[10px] uppercase tracking-widest text-muted-foreground font-bold font-inter">Manual</span>
+                                                <div className="flex items-center gap-2">
+                                                    {row.manual ? (
+                                                        <>
+                                                            <HugeiconsIcon icon={CheckmarkCircle02Icon} size={20} className="text-white/50" />
+                                                            <span className="text-sm text-white/50">Yes</span>
+                                                        </>
+                                                    ) : (
+                                                        <>
+                                                            <HugeiconsIcon icon={Cancel01Icon} size={20} className="text-white/10" />
+                                                            <span className="text-sm text-white/10">No</span>
+                                                        </>
+                                                    )}
+                                                </div>
+                                            </div>
+                                            <div className="space-y-2">
+                                                <span className="text-[10px] uppercase tracking-widest text-primary font-bold font-inter">Copy Trading</span>
+                                                <div className="flex items-center gap-2">
+                                                    <HugeiconsIcon icon={Shield01Icon} size={24} className="text-primary" />
+                                                    <span className="text-sm text-primary font-bold">Included</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                     </ScrollReveal>
                 </div>
@@ -226,45 +258,67 @@ export default function CopyTradingPage() {
 
                     <ScrollReveal variant="fade-up" stagger={0.1} delay={0.2}>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto px-6 md:px-12">
-                            {traders.map((trader, idx) => (
-                                <div
-                                    key={idx}
-                                    className="group relative aspect-[4/5] overflow-hidden rounded-[2rem] bg-white/5 border border-white/10 hover:border-primary/50 transition-all duration-500 cursor-pointer shadow-2xl"
-                                >
-                                    {/* Trader Image */}
-                                    <div className="absolute inset-0 grayscale-[0.5] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700">
-                                        <NextImage
-                                            src={trader.image}
-                                            alt={trader.name}
-                                            fill
-                                            className="object-cover"
-                                        />
-                                    </div>
-
-                                    {/* Shadow Overlay */}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80" />
-
-                                    {/* Name and Badge Overlay */}
-                                    <div className="absolute bottom-8 left-8 right-8 z-10">
-                                        <div className="flex items-center gap-2">
-                                            <h4 className={`${spaceGrotesk.className} font-bold text-2xl text-white tracking-tight`}>
-                                                {trader.name}
-                                            </h4>
-                                            <div className="flex items-center justify-center h-6 w-6 rounded-full bg-gradient-to-tr from-[#BF953F] via-[#FCF6BA] to-[#B38728] text-black shadow-[0_0_10px_rgba(191,149,63,0.5)]">
-                                                <HugeiconsIcon icon={CheckmarkCircle02Icon} size={16} strokeWidth={4} />
-                                            </div>
-                                        </div>
-
-                                        {/* Hover info (Min investment) */}
-                                        <div className="mt-4 h-0 overflow-hidden group-hover:h-12 transition-all duration-500">
-                                            <div className="flex items-center justify-between pt-4 border-t border-white/20">
-                                                <span className="text-sm text-primary font-bold">MIN INVESTMENT</span>
-                                                <span className="text-lg font-bold text-white">${trader.min}</span>
-                                            </div>
-                                        </div>
-                                    </div>
+                            {traders.length === 0 ? (
+                                <div className="col-span-full py-20 text-center text-muted-foreground glass-morphism rounded-[2rem] border-white/10">
+                                    <p className={`${inter.className} text-xl`}>No elite traders available to display right now.</p>
                                 </div>
-                            ))}
+                            ) : traders.map((trader) => {
+                                const isVerified = String(trader.ct_verified) === '1';
+                                const formattedAmount = new Intl.NumberFormat('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(Number(trader.ct_amount) || 0);
+                                const formattedProfit = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(Number(trader.ct_profit) || 0);
+
+                                return (
+                                    <Link
+                                        key={trader.ct_id}
+                                        href={`/trader/${trader.ct_uid}`}
+                                        className="group relative aspect-[4/5] overflow-hidden rounded-[2rem] bg-white/5 border border-white/10 hover:border-primary/50 transition-all duration-500 cursor-pointer shadow-2xl"
+                                    >
+                                        {/* Trader Image */}
+                                        <div className="absolute inset-0 grayscale-[0.5] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700">
+                                            <NextImage
+                                                src={trader.ct_profile_url || `https://i.pravatar.cc/300?u=${trader.ct_id}`}
+                                                alt={trader.ct_name}
+                                                fill
+                                                className="object-cover"
+                                            />
+                                        </div>
+
+                                        {/* Shadow Overlay */}
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80" />
+
+                                        {/* Name and Badge Overlay */}
+                                        <div className="absolute bottom-8 left-8 right-8 z-10">
+                                            <div className="flex items-center gap-2">
+                                                <h4 className={`${spaceGrotesk.className} font-bold text-2xl text-white tracking-tight`}>
+                                                    {trader.ct_name}
+                                                </h4>
+                                                {isVerified && (
+                                                    <div className="flex items-center justify-center h-6 w-6 rounded-full bg-[#BF953F]">
+                                                        <HugeiconsIcon
+                                                            icon={CheckmarkBadge02Icon}
+                                                            size={18}
+                                                            className="text-black"
+                                                            strokeWidth={3}
+                                                        />
+                                                    </div>
+                                                )}
+                                            </div>
+
+                                            {/* Hover info (Min investment and Profit) */}
+                                            <div className="mt-4 h-0 overflow-hidden group-hover:h-20 transition-all duration-500">
+                                                <div className="flex items-center justify-between pt-4 border-t border-white/20">
+                                                    <span className="text-sm text-primary font-bold">MIN INVESTMENT</span>
+                                                    <span className="text-lg font-bold text-white">${formattedAmount}</span>
+                                                </div>
+                                                <div className="flex items-center justify-between pt-2">
+                                                    <span className="text-xs text-green-400 font-bold tracking-widest">TOTAL PROFIT</span>
+                                                    <span className="text-md font-bold text-green-400">{formattedProfit}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </Link>
+                                )
+                            })}
                         </div>
                     </ScrollReveal>
                 </div>

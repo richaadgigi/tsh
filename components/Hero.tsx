@@ -48,7 +48,7 @@ export default function Hero() {
           <ScrollReveal variant="fade-up" delay={0.8}>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <Link
-                href="/dashboard"
+                href="https://app.tradesignalhive.com/auth/signup" target="_blank"
                 className="group flex items-center gap-2 bg-primary text-black px-8 py-4 rounded-full text-lg font-bold transition-all hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(0,242,254,0.4)]"
               >
                 Create an account

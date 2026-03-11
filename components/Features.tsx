@@ -29,7 +29,7 @@ export default function Features() {
                 Knowledge is your greatest asset in the market.
               </p>
               <Link
-                href="/dashboard"
+                href="https://app.tradesignalhive.com/auth/signup" target="_blank"
                 className="inline-flex items-center gap-2 bg-white/5 border border-white/10 text-white px-8 py-4 rounded-full font-bold hover:bg-primary hover:text-black transition-all group"
               >
                 Read Full Report

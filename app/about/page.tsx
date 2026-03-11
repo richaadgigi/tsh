@@ -219,7 +219,7 @@ export default function AboutPage() {
                                 Connect with top experts, learn from seasoned professionals, or simply copy a trader’s profile and ride along on their journey to success.
                             </p>
                             <Link
-                                href="/dashboard"
+                                href="https://app.tradesignalhive.com/auth/signup" target="_blank"
                                 className="inline-block bg-black text-white px-12 py-5 rounded-full text-xl font-bold hover:scale-105 active:scale-95 transition-all shadow-xl"
                             >
                                 Get Started Now

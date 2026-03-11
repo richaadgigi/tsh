@@ -37,7 +37,7 @@ export default function EasyHelp() {
                 </ScrollReveal>
                 <ScrollReveal variant="fade-up" delay={0.8}>
                   <Link
-                    href="/dashboard"
+                    href="https://app.tradesignalhive.com/auth/signup" target="_blank"
                     className="inline-flex items-center justify-center gap-3 bg-primary text-black px-12 py-5 rounded-full text-xl font-bold transition-all hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(0,242,254,0.3)] group"
                   >
                     Start Trading Now

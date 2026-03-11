@@ -78,7 +78,7 @@ export default function ExpertNetwork() {
                                     We are more than just a community—we're a hub for traders of all levels. Connect with top experts, learn from seasoned professionals, or simply copy a trader’s profile and ride along on their journey to success.
                                 </p>
                                 <Link
-                                    href="/dashboard"
+                                    href="https://app.tradesignalhive.com/auth/signup" target="_blank"
                                     className="inline-flex items-center justify-center gap-3 bg-primary text-black px-10 py-4 rounded-full font-bold transition-all hover:scale-105"
                                 >
                                     Join the Club <HugeiconsIcon icon={ArrowRight01Icon} size={20} />

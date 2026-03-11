@@ -94,7 +94,7 @@ export default function Plan() {
                                 </div>
 
                                 <Link
-                                    href="/dashboard"
+                                    href="https://app.tradesignalhive.com/auth/signup" target="_blank"
                                     className={`w-full py-5 rounded-2xl text-center font-bold text-lg transition-all ${plan.gradient
                                         ? "bg-primary text-black hover:shadow-[0_0_30px_rgba(0,242,254,0.4)]"
                                         : "bg-white/5 text-white hover:bg-white/10 border border-white/10"

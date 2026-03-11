@@ -34,7 +34,7 @@ export default function Tools() {
                                 Track top stocks like Apple, Tesla, Amazon, and NVIDIA for <br />
                                 smarter investing decisions.
                             </p>
-                            <Link href="/dashboard">
+                            <Link href="https://app.tradesignalhive.com/auth/signup" target="_blank">
                                 <button className="bg-primary text-black px-10 py-4 rounded-full font-bold text-lg hover:scale-105 active:scale-95 transition-all shadow-[0_0_20px_rgba(0,242,254,0.2)]">
                                     Explore Now
                                 </button>

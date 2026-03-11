@@ -1,5 +1,5 @@
 import { HugeiconsIcon } from "@hugeicons/react";
-import { HexagonIcon, NewTwitterIcon, Github01Icon, Linkedin01Icon } from "@hugeicons/core-free-icons";
+import { HexagonIcon, YoutubeIcon } from "@hugeicons/core-free-icons";
 import Link from "next/link";
 import Image from "next/image";
 import { spaceGrotesk, inter } from "../lib/fonts";
@@ -16,7 +16,7 @@ export default function Footer() {
 
             <div className="md:col-span-4 space-y-8">
               <Link href="/" className="flex items-center gap-3">
-                <div className="relative w-10 h-10">
+                <div className="relative w-14 h-14">
                   <Image
                     src="https://res.cloudinary.com/xnyder/image/upload/v1743325093/crypto-trade-signal-hive/brand/new-ctsh-logo_motwjq.png"
                     alt="Trade Signal Hive Logo"
@@ -33,15 +33,13 @@ export default function Footer() {
                 Accurate. Real-time. Professional.
               </p>
               <div className="flex gap-4">
-                {[NewTwitterIcon, Github01Icon, Linkedin01Icon].map((icon, idx) => (
-                  <Link key={idx} href="#" className="h-10 w-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary hover:text-black transition-all">
-                    <HugeiconsIcon icon={icon} size={20} />
-                  </Link>
-                ))}
+                <Link href="https://youtube.com/@tradesignalhive?si=VzlCKF43SaxXe3ro" target="_blank" className="h-10 w-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary hover:text-black transition-all">
+                  <HugeiconsIcon icon={YoutubeIcon} size={20} />
+                </Link>
               </div>
             </div>
 
-            <div className="md:col-span-8 grid grid-cols-2 sm:grid-cols-3 gap-12">
+            <div className="md:col-span-8 grid grid-cols-1 sm:grid-cols-3 gap-12 text-center sm:text-left">
               <div className="space-y-6">
                 <h3 className={`${spaceGrotesk.className} text-lg font-bold text-white uppercase tracking-wider`}>Platform</h3>
                 <ul className="space-y-4">
@@ -55,13 +53,21 @@ export default function Footer() {
                       FAQ
                     </Link>
                   </li>
-                  {["Features", "Pricing", "Real-Time Data"].map((item) => (
-                    <li key={item}>
-                      <Link href={`#${item.toLowerCase().replace(" ", "-")}`} className="text-muted-foreground hover:text-primary transition-colors">
-                        {item}
-                      </Link>
-                    </li>
-                  ))}
+                  <li>
+                    <Link href="/media" className="text-muted-foreground hover:text-primary transition-colors">
+                      Media
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/contact" className="text-muted-foreground hover:text-primary transition-colors">
+                      Contact
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/about" className="text-muted-foreground hover:text-primary transition-colors">
+                      About Us
+                    </Link>
+                  </li>
                 </ul>
               </div>
 
@@ -78,13 +84,11 @@ export default function Footer() {
                       Contact
                     </Link>
                   </li>
-                  {["Careers"].map((item) => (
-                    <li key={item}>
-                      <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                        {item}
-                      </Link>
-                    </li>
-                  ))}
+                  <li>
+                    <Link href="/media" className="text-muted-foreground hover:text-primary transition-colors">
+                      Media
+                    </Link>
+                  </li>
                 </ul>
               </div>
 
@@ -106,9 +110,6 @@ export default function Footer() {
           <div className="mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
             <p className="text-sm text-muted-foreground">&copy; {new Date().getFullYear()} Trade Signal Hive. All rights reserved.</p>
             <div className="flex items-center gap-6 text-sm text-muted-foreground">
-              <Link href="#" className="hover:text-white transition-colors">Status</Link>
-              <Link href="#" className="hover:text-white transition-colors">Security</Link>
-              <Link href="#" className="hover:text-white transition-colors">Cookies</Link>
             </div>
           </div>
         </div>

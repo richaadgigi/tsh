@@ -140,7 +140,7 @@ export default function FAQPage() {
                                     Get in Touch <HugeiconsIcon icon={ArrowRight01Icon} size={24} />
                                 </Link>
                                 <Link
-                                    href="/dashboard"
+                                    href="https://app.tradesignalhive.com/auth/signup" target="_blank"
                                     className="w-full sm:w-auto bg-black/10 border border-black/20 text-black px-12 py-5 rounded-full text-xl font-bold hover:bg-black/20 transition-all font-bold"
                                 >
                                     Go to Dashboard
