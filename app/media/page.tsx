@@ -47,7 +47,8 @@ export default function MediaPage() {
 
     const handlePlayVideo = (id: string) => {
         setPlayingVideoId(id);
-        window.scrollTo({ top: 0, behavior: "smooth" });
+        // Direct scroll to top for immediate response
+        window.scrollTo(0, 0);
     };
 
     // Prevent body scroll when custom player overlay is active? 
@@ -200,7 +201,10 @@ export default function MediaPage() {
                         {/* Left Column: Video & Info */}
                         <div className="flex-1 min-w-0">
                             <button
-                                onClick={() => setPlayingVideoId(null)}
+                                onClick={() => {
+                                    setPlayingVideoId(null);
+                                    window.scrollTo(0, 0);
+                                }}
                                 className="flex items-center gap-2 text-muted-foreground hover:text-white transition-all mb-6 group cursor-pointer active:scale-95"
                             >
                                 <HugeiconsIcon icon={ArrowLeft02Icon} size={20} className="group-hover:-translate-x-1 transition-transform" />
