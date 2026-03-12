@@ -4,7 +4,6 @@ import { spaceGrotesk, inter } from "@/lib/fonts";
 import { HugeiconsIcon } from "@hugeicons/react";
 import {
     Mail01Icon,
-    SmartPhone01Icon,
     SentIcon,
     BubbleChatIcon,
     YoutubeIcon,

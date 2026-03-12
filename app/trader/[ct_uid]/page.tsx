@@ -8,16 +8,14 @@ import {
     WhatsappIcon,
     Facebook01Icon,
     Linkedin01Icon,
-    ArrowLeft01Icon,
     AnalyticsUpIcon,
     ZapIcon,
-    MoneyReceive01Icon,
-    UserGroupIcon
+    MoneyReceive01Icon
 } from "@hugeicons/core-free-icons";
 import Link from "next/link";
 import NextImage from "next/image";
 import ScrollReveal from "@/components/ScrollReveal";
-import { copyTraderApi, CopyTrader } from "@/lib/api";
+import { copyTraderApi } from "@/lib/api";
 import { notFound } from "next/navigation";
 
 interface PageProps {

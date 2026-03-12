@@ -11,9 +11,6 @@ import {
     Clock01Icon,
     UserGroupIcon,
     ArrowRight01Icon,
-    StarIcon,
-    BarChartIcon,
-    PieChartIcon,
     ZapIcon
 } from "@hugeicons/core-free-icons";
 import Link from "next/link";
@@ -102,7 +99,7 @@ export default async function CopyTradingPage() {
                                 <p className={`${inter.className} text-lg text-muted-foreground leading-relaxed`}>
                                     Join us and experience copy-trading with a leading traders community.
                                     Discover experienced leaders globally and automatically copy their positions.
-                                    Whether you're a beginner looking to improve your trading skills or an
+                                    Whether you&apos;re a beginner looking to improve your trading skills or an
                                     experienced investor seeking a straightforward solution, Trade Signal Hive is the place for you.
                                 </p>
                             </ScrollReveal>

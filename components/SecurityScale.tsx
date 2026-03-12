@@ -1,8 +1,8 @@
 "use client";
 
-import { spaceGrotesk, inter } from "../lib/fonts";
+import { spaceGrotesk } from "../lib/fonts";
 import { HugeiconsIcon } from "@hugeicons/react";
-import { Shield01Icon, ZapIcon, GlobeIcon, LockIcon, BarChartIcon } from "@hugeicons/core-free-icons";
+import { Shield01Icon, GlobeIcon, LockIcon, BarChartIcon } from "@hugeicons/core-free-icons";
 import ScrollReveal from "./ScrollReveal";
 
 export default function SecurityScale() {

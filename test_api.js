@@ -1,4 +1,4 @@
-const fs = require('fs');
+import fs from 'fs';
 
 // Hacky env loader
 const envContent = fs.readFileSync('.env.local', 'utf-8');

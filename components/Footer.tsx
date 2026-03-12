@@ -1,5 +1,5 @@
 import { HugeiconsIcon } from "@hugeicons/react";
-import { HexagonIcon, YoutubeIcon } from "@hugeicons/core-free-icons";
+import { YoutubeIcon } from "@hugeicons/core-free-icons";
 import Link from "next/link";
 import Image from "next/image";
 import { spaceGrotesk, inter } from "../lib/fonts";
@@ -16,7 +16,7 @@ export default function Footer() {
 
             <div className="md:col-span-4 space-y-8">
               <Link href="/" className="flex items-center gap-3">
-                <div className="relative w-20 h-20">
+                <div className="relative w-36 h-36">
                   <Image
                     src="https://res.cloudinary.com/xnyder/image/upload/v1743325093/crypto-trade-signal-hive/brand/new-ctsh-logo_motwjq.png"
                     alt="Trade Signal Hive Logo"

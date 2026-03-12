@@ -33,7 +33,7 @@ export default function ScrollReveal({
     useGSAP(() => {
         if (!elementRef.current) return;
 
-        let fromVars: gsap.TweenVars = { opacity: 0 };
+        const fromVars: gsap.TweenVars = { opacity: 0 };
         const toVars: gsap.TweenVars = {
             opacity: 1,
             duration,

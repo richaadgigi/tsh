@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { spaceGrotesk, inter } from "@/lib/fonts";
@@ -9,15 +9,19 @@ import {
     PlayIcon,
     CheckmarkCircle02Icon,
     Search01Icon,
-    ThumbsUpIcon,
-    ThumbsDownIcon,
     Share01Icon,
-    Configuration01Icon,
     ArrowLeft02Icon
 } from "@hugeicons/core-free-icons";
 import ScrollReveal from "@/components/ScrollReveal";
 import Image from "next/image";
-import { videos, Video } from "@/lib/media-data";
+import { videos } from "@/lib/media-data";
+import dynamic from "next/dynamic";
+
+// Dynamically import Vidstack player with SSR disabled to prevent hydration issues
+const VideoPlayer = dynamic(() => import("@/components/VideoPlayer"), {
+    ssr: false,
+    loading: () => <div className="w-full h-full bg-black animate-pulse" />
+});
 
 const categories = ["All", "Analysis", "Webinars", "Tutorials", "Live Trading", "Interviews"];
 
@@ -212,16 +216,11 @@ export default function MediaPage() {
                             </button>
 
                             <div className="relative w-full aspect-video rounded-[2.5rem] overflow-hidden bg-black border border-white/10 mb-8 shadow-2xl">
-                                <video
-                                    key={currentVideo?.id}
-                                    controls
-                                    autoPlay
-                                    className="w-full h-full object-contain"
-                                    poster={currentVideo?.thumbnail}
-                                >
-                                    <source src={currentVideo?.videoUrl} type="video/mp4" />
-                                    Your browser does not support the video tag.
-                                </video>
+                                <VideoPlayer
+                                    src={currentVideo?.videoUrl || ""}
+                                    title={currentVideo?.title || "Trade Signal Hive Video"}
+                                    poster={currentVideo?.thumbnail || ""}
+                                />
                             </div>
 
                             <div className="px-2">
@@ -241,29 +240,13 @@ export default function MediaPage() {
                                                     <HugeiconsIcon icon={CheckmarkCircle02Icon} size={16} className="text-primary" />
                                                 )}
                                             </div>
-                                            <span className="text-xs text-muted-foreground">55.3K subscribers</span>
                                         </div>
-                                        <button className="ml-4 bg-white text-black px-6 py-2.5 rounded-full text-sm font-bold hover:bg-white/90 transition-all hover:scale-105 active:scale-95">
-                                            Subscribe
-                                        </button>
                                     </div>
 
                                     <div className="flex items-center gap-3">
-                                        <div className="flex bg-white/5 rounded-full p-1 border border-white/5">
-                                            <button className="flex items-center gap-2 px-4 py-2 hover:bg-white/10 rounded-l-full transition-colors border-r border-white/10">
-                                                <HugeiconsIcon icon={ThumbsUpIcon} size={18} />
-                                                <span className="text-sm font-bold">6.3K</span>
-                                            </button>
-                                            <button className="px-4 py-2 hover:bg-white/10 rounded-r-full transition-colors">
-                                                <HugeiconsIcon icon={ThumbsDownIcon} size={18} />
-                                            </button>
-                                        </div>
-                                        <button className="flex items-center gap-2 bg-white/5 px-5 py-2.5 rounded-full border border-white/5 hover:bg-white/10 transition-all">
+                                        <button className="flex items-center gap-2 bg-white/5 px-5 py-2.5 rounded-full border border-white/5 hover:bg-white/10 transition-all active:scale-95">
                                             <HugeiconsIcon icon={Share01Icon} size={18} />
                                             <span className="text-sm font-bold">Share</span>
-                                        </button>
-                                        <button className="h-10 w-10 flex items-center justify-center bg-white/5 rounded-full border border-white/5 hover:bg-white/10 transition-all">
-                                            <HugeiconsIcon icon={Configuration01Icon} size={18} />
                                         </button>
                                     </div>
                                 </div>

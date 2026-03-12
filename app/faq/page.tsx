@@ -68,7 +68,7 @@ export default function FAQPage() {
                     </ScrollReveal>
                     <ScrollReveal variant="fade-up" delay={0.6}>
                         <p className={`${inter.className} text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-12`}>
-                            Have questions? We're here to help. Explore our common queries or contact us for further enquiries.
+                            Have questions? We&apos;re here to help. Explore our common queries or contact us for further enquiries.
                         </p>
                     </ScrollReveal>
                     <ScrollReveal variant="fade-up" delay={0.8}>
@@ -130,7 +130,7 @@ export default function FAQPage() {
                                 Still have questions?
                             </h2>
                             <p className="text-lg md:text-xl font-medium max-w-2xl mx-auto mb-12 opacity-80 leading-relaxed italic">
-                                Can't find the answer you're looking for? Our dedicated support team is available 24/7 to help you with anything you need.
+                                Can&apos;t find the answer you&apos;re looking for? Our dedicated support team is available 24/7 to help you with anything you need.
                             </p>
                             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                                 <Link

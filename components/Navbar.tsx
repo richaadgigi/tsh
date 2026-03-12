@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { HugeiconsIcon } from "@hugeicons/react";
-import { HexagonIcon, Menu01Icon, Cancel01Icon } from "@hugeicons/core-free-icons";
+import { Menu01Icon, Cancel01Icon } from "@hugeicons/core-free-icons";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -30,13 +30,13 @@ export default function Navbar() {
     <>
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-          ? "bg-black/60 backdrop-blur-xl border-b border-white/5 py-3"
-          : "bg-transparent py-5"
+          ? "bg-black/60 backdrop-blur-xl border-b border-white/5 py-1"
+          : "bg-transparent py-2"
           }`}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6">
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="relative w-20 h-20">
+            <div className="relative w-24 h-24">
               <Image
                 src="https://res.cloudinary.com/xnyder/image/upload/v1743325093/crypto-trade-signal-hive/brand/new-ctsh-logo_motwjq.png"
                 alt="Trade Signal Hive Logo"
@@ -106,7 +106,7 @@ export default function Navbar() {
           {/* Mobile Header */}
           <div className="flex items-center justify-between px-6 py-5 border-b border-white/5 bg-black">
             <Link href="/" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-2">
-              <div className="relative w-16 h-16">
+              <div className="relative w-24 h-24">
                 <Image
                   src="https://res.cloudinary.com/xnyder/image/upload/v1743325093/crypto-trade-signal-hive/brand/new-ctsh-logo_motwjq.png"
                   alt="Trade Signal Hive Logo"

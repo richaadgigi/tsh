@@ -3,7 +3,7 @@ import Image from "next/image";
 import { spaceGrotesk, inter } from "../lib/fonts";
 import ScrollReveal from "./ScrollReveal";
 import { HugeiconsIcon } from "@hugeicons/react";
-import { ArrowRight01Icon, AnalyticsUpIcon } from "@hugeicons/core-free-icons";
+import { ArrowRight01Icon } from "@hugeicons/core-free-icons";
 
 export default function Hero() {
   return (
@@ -34,7 +34,7 @@ export default function Hero() {
 
           <ScrollReveal variant="fade-up" delay={0.4}>
             <h1 className={`${spaceGrotesk.className} text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-8 tracking-tight text-white`}>
-              Don't wait to invest in your future <br />
+              Don&apos;t wait to invest in your future <br />
               <span className="text-primary">Smarter Faster Investing</span>
             </h1>
           </ScrollReveal>

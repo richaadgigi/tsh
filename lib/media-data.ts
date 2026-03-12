@@ -1,6 +1,11 @@
 export interface Video {
     id: string;
-    videoUrl: string; // Changed from youtubeId to videoUrl
+    /** 
+     * The direct URL to the video file.
+     * TIP: For "Data Saving" (Automatic Quality Switching), use an HLS (.m3u8) URL.
+     * If you use a plain .mp4 URL, it will work but won't change quality automatically.
+     */
+    videoUrl: string;
     title: string;
     description: string;
     category: string;
@@ -18,7 +23,7 @@ export interface Video {
 export const videos: Video[] = [
     {
         id: "1",
-        videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+        videoUrl: "https://stream.mux.com/15koNbbh00lOk5g1QO7T1uR78l9H29K5X/m3u8",
         title: "Mastering Market Psychology & Emotional Discipline",
         description: "In this exclusive webinar, our lead trader discusses the crucial role of emotional discipline in trading. Learn how to identify FOMO, manage risk effectively, and build a winning mindset for long-term success.",
         category: "Webinars",

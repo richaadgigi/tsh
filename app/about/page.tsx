@@ -48,7 +48,7 @@ export default function AboutPage() {
                                     driven by a shared mission: to make cryptocurrency accessible, secure, and rewarding for everyone.
                                 </p>
                                 <p className={`${inter.className} text-lg text-muted-foreground leading-relaxed`}>
-                                    Whether you're a seasoned investor or a newcomer to the crypto space,
+                                    Whether you&apos;re a seasoned investor or a newcomer to the crypto space,
                                     we provide the tools, insights, and opportunities you need to thrive in the digital economy.
                                 </p>
                             </ScrollReveal>
@@ -215,7 +215,7 @@ export default function AboutPage() {
                                 Join a club of more than <br /> 480,000 traders
                             </h2>
                             <p className="text-lg md:text-xl font-medium max-w-3xl mx-auto mb-12 opacity-80 italic">
-                                We are more than just a community—we're a hub for traders of all levels.
+                                We are more than just a community—we&apos;re a hub for traders of all levels.
                                 Connect with top experts, learn from seasoned professionals, or simply copy a trader’s profile and ride along on their journey to success.
                             </p>
                             <Link

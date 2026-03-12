@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { HugeiconsIcon } from "@hugeicons/react";
-import { CheckmarkCircle02Icon, Shield01Icon, ZapIcon } from "@hugeicons/core-free-icons";
+import { CheckmarkCircle02Icon, ZapIcon } from "@hugeicons/core-free-icons";
 import { spaceGrotesk, inter } from "../lib/fonts";
 import ScrollReveal from "./ScrollReveal";
 

@@ -75,7 +75,7 @@ export default function ExpertNetwork() {
                                     Join a club of more than <span className="text-primary">480,000 traders</span>
                                 </h3>
                                 <p className="text-muted-foreground text-lg leading-relaxed">
-                                    We are more than just a community—we're a hub for traders of all levels. Connect with top experts, learn from seasoned professionals, or simply copy a trader’s profile and ride along on their journey to success.
+                                    We are more than just a community—we&apos;re a hub for traders of all levels. Connect with top experts, learn from seasoned professionals, or simply copy a trader’s profile and ride along on their journey to success.
                                 </p>
                                 <Link
                                     href="https://app.tradesignalhive.com/auth/signup" target="_blank"

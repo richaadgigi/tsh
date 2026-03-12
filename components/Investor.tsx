@@ -100,7 +100,7 @@ export default function Investor() {
                       </div>
 
                       <p className={`mb-10 text-lg leading-relaxed text-white/80 ${inter.className}`}>
-                        "{item.text}"
+                        &quot;{item.text}&quot;
                       </p>
                     </div>
 
