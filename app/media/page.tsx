@@ -212,16 +212,16 @@ export default function MediaPage() {
                             </button>
 
                             <div className="relative w-full aspect-video rounded-[2.5rem] overflow-hidden bg-black border border-white/10 mb-8 shadow-2xl">
-                                <iframe
-                                    width="100%"
-                                    height="100%"
-                                    src={`https://www.youtube.com/embed/${currentVideo?.youtubeId}?autoplay=1&rel=0&modestbranding=1`}
-                                    title="YouTube video player"
-                                    frameBorder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                    allowFullScreen
-                                    className="w-full h-full"
-                                ></iframe>
+                                <video
+                                    key={currentVideo?.id}
+                                    controls
+                                    autoPlay
+                                    className="w-full h-full object-contain"
+                                    poster={currentVideo?.thumbnail}
+                                >
+                                    <source src={currentVideo?.videoUrl} type="video/mp4" />
+                                    Your browser does not support the video tag.
+                                </video>
                             </div>
 
                             <div className="px-2">

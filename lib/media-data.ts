@@ -1,6 +1,6 @@
 export interface Video {
     id: string;
-    youtubeId: string;
+    videoUrl: string; // Changed from youtubeId to videoUrl
     title: string;
     description: string;
     category: string;
@@ -18,7 +18,7 @@ export interface Video {
 export const videos: Video[] = [
     {
         id: "1",
-        youtubeId: "p7HKvqRI_Bo",
+        videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
         title: "Mastering Market Psychology & Emotional Discipline",
         description: "In this exclusive webinar, our lead trader discusses the crucial role of emotional discipline in trading. Learn how to identify FOMO, manage risk effectively, and build a winning mindset for long-term success.",
         category: "Webinars",
@@ -34,7 +34,7 @@ export const videos: Video[] = [
     },
     {
         id: "2",
-        youtubeId: "S8v3Iyk2A3I",
+        videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
         title: "Top 5 Altcoins for the Next Bull Run",
         description: "Analysis of the most promising altcoins with 10x potential in the upcoming market cycle.",
         category: "Analysis",
@@ -46,7 +46,7 @@ export const videos: Video[] = [
     },
     {
         id: "3",
-        youtubeId: "Z-itYQ6qU0k",
+        videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
         title: "How to use Trade Signal Hive Dashboard",
         description: "A complete walkthrough of the platform features and how to maximize your trading signals.",
         category: "Tutorials",
@@ -58,7 +58,7 @@ export const videos: Video[] = [
     },
     {
         id: "4",
-        youtubeId: "XU8_K9u8v7A",
+        videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
         title: "Live Trading Session: NFP Release",
         description: "Watch as we trade the high-impact NFP news live on the charts.",
         category: "Live Trading",
@@ -70,7 +70,7 @@ export const videos: Video[] = [
     },
     {
         id: "5",
-        youtubeId: "p7HKvqRI_Bo",
+        videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
         title: "Understanding Order Blocks & Liquidity",
         description: "Advanced institutional trading concepts explained for retail traders.",
         category: "Analysis",
@@ -82,7 +82,7 @@ export const videos: Video[] = [
     },
     {
         id: "6",
-        youtubeId: "S8v3Iyk2A3I",
+        videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
         title: "Crypto Market Weekly Analysis",
         description: "Breaking down the weekly price action for BTC and ETH.",
         category: "Analysis",
@@ -94,7 +94,7 @@ export const videos: Video[] = [
     },
     {
         id: "7",
-        youtubeId: "Z-itYQ6qU0k",
+        videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
         title: "Beginner's Guide to Risk Management",
         description: "The most important skill in trading is not losing money. Learn how to protect your capital.",
         category: "Tutorials",
@@ -106,7 +106,7 @@ export const videos: Video[] = [
     },
     {
         id: "8",
-        youtubeId: "XU8_K9u8v7A",
+        videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
         title: "Exclusive Interview with Top Analyst",
         description: "Diving deep into macro trends and global economy impacts on crypto.",
         category: "Interviews",
