@@ -164,7 +164,7 @@ export default async function TraderProfilePage({ params }: PageProps) {
                                     </div>
 
                                     <div
-                                        className={`${inter.className} text-xl md:text-2xl text-white/80 prose prose-invert prose-p:text-xl prose-p:leading-[1.8] prose-p:text-white/80 prose-headings:text-white prose-strong:text-white prose-blockquote:border-primary prose-blockquote:bg-white/5 prose-blockquote:p-6 prose-blockquote:rounded-2xl max-w-none font-medium [&_*]:!font-[inherit] [&_*]:!text-[inherit] [&_*]:!leading-[inherit]`}
+                                        className={`${inter.className} w-full max-w-none prose prose-invert !text-xl md:!text-2xl !leading-[2] !text-white/90 [&_*]:!text-xl md:[&_*]:!text-2xl [&_*]:!leading-[2] [&_*]:!text-white/90 [&_*]:!font-medium [&_*]:!font-[inherit] [&_*]:!text-left prose-headings:!text-white prose-strong:!text-white prose-blockquote:!border-primary prose-blockquote:!bg-white/5 prose-blockquote:!p-6 prose-blockquote:!rounded-2xl`}
                                         style={{ fontFamily: 'var(--font-inter), sans-serif' }}
                                         dangerouslySetInnerHTML={{ __html: trader.ct_description }}
                                     />
