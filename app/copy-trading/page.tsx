@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { spaceGrotesk, inter } from "@/lib/fonts";
@@ -25,6 +26,11 @@ const comparison = [
     { feature: "Access to verified data", manual: false, copy: true },
     { feature: "Choose a trading strategy that suits your style", manual: true, copy: true },
 ];
+
+export const metadata: Metadata = {
+    title: "Copy Trading | Trade Signal Hive",
+    description: "Experience intuitive copy trading powered by social intelligence. Discover top traders globally and automatically copy their trades.",
+};
 
 export default async function CopyTradingPage() {
 

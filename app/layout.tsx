@@ -13,9 +13,43 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Trade Signal Hive",
+  metadataBase: new URL("https://tradesignalhive.com"),
+  title: "Trade Signal Hive - Build Your Trading Empire",
   description:
-    "Master the markets with real-time crypto and stock signals powered.",
+    "Trade Signal Hive is a platform that helps you build your trading empire with real-time crypto and stock signals. Invest in the best traders and copy their trades. Manage your portfolio and track your performance.",
+  keywords: ["trade signal", "crypto signal", "stock signal", "copy trade", "portfolio management", "performance tracking"],
+  authors: [{ name: "Trade Signal Hive" }],
+  creator: "Trade Signal Hive",
+  publisher: "Trade Signal Hive",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  openGraph: {
+    title: "Trade Signal Hive - Build Your Trading Empire",
+    description:
+      "Trade Signal Hive is a platform that helps you build your trading empire with real-time crypto and stock signals. Invest in the best traders and copy their trades. Manage your portfolio and track your performance.",
+    url: "https://tradesignalhive.com",
+    siteName: "Trade Signal Hive",
+    images: [
+      {
+        url: "https://tradesignalhive.com/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Trade Signal Hive - Build Your Trading Empire",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Trade Signal Hive - Build Your Trading Empire",
+    description:
+      "Trade Signal Hive is a platform that helps you build your trading empire with real-time crypto and stock signals. Invest in the best traders and copy their trades. Manage your portfolio and track your performance.",
+    images: ["https://tradesignalhive.com/og-image.jpg"],
+  },
 };
 
 import SmoothScroll from "@/components/SmoothScroll";
