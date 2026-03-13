@@ -125,14 +125,14 @@ export default function FAQPage() {
                 <div className="container mx-auto px-6">
                     <ScrollReveal variant="scale">
                         <div className="bg-primary p-8 md:p-12 rounded-[4rem] text-center text-black relative overflow-hidden group shadow-2xl">
-                            <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
-                            <h2 className={`${spaceGrotesk.className} text-4xl md:text-5xl font-bold mb-8`}>
+                            <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+                            <h2 className={`${spaceGrotesk.className} text-4xl md:text-5xl font-bold mb-8 relative z-10`}>
                                 Still have questions?
                             </h2>
-                            <p className="text-lg md:text-xl font-medium max-w-2xl mx-auto mb-12 opacity-80 leading-relaxed italic">
+                            <p className="text-lg md:text-xl font-medium max-w-2xl mx-auto mb-12 opacity-80 leading-relaxed italic relative z-10">
                                 Can&apos;t find the answer you&apos;re looking for? Our dedicated support team is available 24/7 to help you with anything you need.
                             </p>
-                            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+                            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 relative z-10">
                                 <Link
                                     href="/contact"
                                     className="w-full sm:w-auto bg-black text-white px-12 py-5 rounded-full text-xl font-bold hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-3 shadow-xl"
@@ -140,8 +140,8 @@ export default function FAQPage() {
                                     Get in Touch <HugeiconsIcon icon={ArrowRight01Icon} size={24} />
                                 </Link>
                                 <Link
-                                    href="https://app.tradesignalhive.com/auth/signup" target="_blank"
-                                    className="w-full sm:w-auto bg-black/10 border border-black/20 text-black px-12 py-5 rounded-full text-xl font-bold hover:bg-black/20 transition-all font-bold"
+                                    href="https://app.tradesignalhive.com/dashboard" target="_blank"
+                                    className="w-full sm:w-auto bg-black/10 border border-black/20 text-black px-12 py-5 rounded-full text-xl font-bold hover:bg-black/20 transition-all"
                                 >
                                     Go to Dashboard
                                 </Link>
