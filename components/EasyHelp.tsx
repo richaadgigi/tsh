@@ -46,14 +46,14 @@ export default function EasyHelp() {
                 </ScrollReveal>
               </div>
 
-              <ScrollReveal variant="scale" delay={0.6} className="flex-1 relative w-full aspect-square max-w-[500px]">
+              <ScrollReveal variant="scale" delay={0.6} className="flex-1 relative w-full max-w-[500px] self-end -mb-8 md:-mb-12 lg:mt-0 mt-8">
                 <div className="absolute inset-0 bg-primary/10 rounded-full blur-2xl opacity-50" />
                 <Image
                   src="/trading.png"
                   alt="Trade Signal App Preview"
                   width={600}
-                  height={600}
-                  className="relative z-10 w-full h-auto object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
+                  height={800}
+                  className="relative z-10 w-full h-auto drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] object-bottom"
                 />
               </ScrollReveal>
             </div>

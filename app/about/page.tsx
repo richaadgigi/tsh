@@ -55,26 +55,26 @@ export default function AboutPage() {
                         </div>
                         <div className="flex-1">
                             <ScrollReveal variant="scale" delay={0.3}>
-                                <div className="grid grid-cols-2 gap-4">
-                                    <div className="bg-white/5 p-8 md:p-12 rounded-3xl border border-white/5 flex flex-col items-center text-center">
+                                <div className="grid grid-cols-2 gap-4 md:gap-6">
+                                    <div className="bg-white/5 p-6 md:p-8 lg:p-12 rounded-3xl border border-white/5 flex flex-col items-center text-center">
                                         <HugeiconsIcon icon={UserGroupIcon} size={32} className="text-primary mb-4" />
-                                        <span className="text-2xl font-bold text-white">480k+</span>
-                                        <span className="text-xs text-muted-foreground uppercase tracking-wider">Traders</span>
+                                        <span className="text-xl md:text-2xl font-bold text-white">480k+</span>
+                                        <span className="text-[10px] md:text-xs text-muted-foreground uppercase tracking-wider">Traders</span>
                                     </div>
-                                    <div className="bg-white/5 p-8 md:p-12 rounded-3xl border border-white/5 flex flex-col items-center text-center mt-8">
+                                    <div className="bg-white/5 p-6 md:p-8 lg:p-12 rounded-3xl border border-white/5 flex flex-col items-center text-center">
                                         <HugeiconsIcon icon={Award01Icon} size={32} className="text-primary mb-4" />
-                                        <span className="text-2xl font-bold text-white">10+ Year</span>
-                                        <span className="text-xs text-muted-foreground uppercase tracking-wider">Experience</span>
+                                        <span className="text-xl md:text-2xl font-bold text-white">10+ Year</span>
+                                        <span className="text-[10px] md:text-xs text-muted-foreground uppercase tracking-wider">Experience</span>
                                     </div>
-                                    <div className="bg-white/5 p-8 md:p-12 rounded-3xl border border-white/5 flex flex-col items-center text-center -mt-8">
+                                    <div className="bg-white/5 p-6 md:p-8 lg:p-12 rounded-3xl border border-white/5 flex flex-col items-center text-center">
                                         <HugeiconsIcon icon={GlobeIcon} size={32} className="text-primary mb-4" />
-                                        <span className="text-2xl font-bold text-white">90+</span>
-                                        <span className="text-xs text-muted-foreground uppercase tracking-wider">Countries</span>
+                                        <span className="text-xl md:text-2xl font-bold text-white">90+</span>
+                                        <span className="text-[10px] md:text-xs text-muted-foreground uppercase tracking-wider">Countries</span>
                                     </div>
-                                    <div className="bg-white/5 p-8 md:p-12 rounded-3xl border border-white/5 flex flex-col items-center text-center">
+                                    <div className="bg-white/5 p-6 md:p-8 lg:p-12 rounded-3xl border border-white/5 flex flex-col items-center text-center">
                                         <HugeiconsIcon icon={ZapIcon} size={32} className="text-primary mb-4" />
-                                        <span className="text-2xl font-bold text-white">0.01s</span>
-                                        <span className="text-xs text-muted-foreground uppercase tracking-wider">Latency</span>
+                                        <span className="text-xl md:text-2xl font-bold text-white">0.01s</span>
+                                        <span className="text-[10px] md:text-xs text-muted-foreground uppercase tracking-wider">Latency</span>
                                     </div>
                                 </div>
                             </ScrollReveal>
@@ -132,12 +132,12 @@ export default function AboutPage() {
                         <div className="glass-morphism rounded-[3.5rem] p-8 md:p-12 border-white/10 overflow-hidden relative">
                             <div className="absolute top-0 right-0 w-1/2 h-full bg-primary/5 blur-[120px] -z-10" />
                             <div className="flex flex-col lg:flex-row gap-16 items-center">
-                                <div className="w-full lg:w-1/3 aspect-square relative rounded-[3rem] overflow-hidden border-2 border-primary/20">
+                                <div className="w-full lg:w-1/3 aspect-[4/5] lg:aspect-[4/5] relative rounded-[3rem] overflow-hidden border-2 border-primary/20">
                                     <Image
-                                        src={`https://i.pravatar.cc/600?u=RonaldKentJohn`}
+                                        src="/images/founder.png"
                                         alt="Ronald Kent John"
                                         fill
-                                        className="object-cover"
+                                        className="object-cover object-top"
                                     />
                                 </div>
                                 <div className="flex-1">

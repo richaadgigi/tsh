@@ -59,10 +59,10 @@ export default function MediaPage() {
     // Actually, user wants to see navigation to other videos, so it should be scrollable.
 
     return (
-        <main className="min-h-screen bg-background text-white pb-24">
+        <main className="min-h-screen flex flex-col bg-background text-white">
             <Navbar />
 
-            <div className="pt-28 container mx-auto px-6">
+            <div className="pt-28 container mx-auto px-6 flex-1 flex flex-col">
                 {!playingVideoId ? (
                     <>
                         {/* Library Mode */}
@@ -149,7 +149,7 @@ export default function MediaPage() {
                         )}
 
                         {/* Grid */}
-                        <div>
+                        <div className="pb-24">
                             <h3 className={`${spaceGrotesk.className} text-2xl font-bold mb-8`}>
                                 {selectedCategory === "All" ? "Recommended For You" : `${selectedCategory} Videos`}
                             </h3>

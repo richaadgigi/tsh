@@ -30,8 +30,11 @@ export default function Footer() {
                 Accurate. Real-time. Professional.
               </p>
               <div className="flex gap-4">
-                <Link href="https://youtube.com/@tradesignalhive?si=VzlCKF43SaxXe3ro" target="_blank" className="h-10 w-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary hover:text-black transition-all">
-                  <HugeiconsIcon icon={YoutubeIcon} size={20} />
+                <Link href="https://t.me/trade_signal_hive" target="_blank" className="h-10 w-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary hover:text-black transition-all">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.08-.19-.09-.05-.21-.02-.3.01-.13.04-2.18 1.39-6.17 4.08-.58.42-1.11.62-1.59.61-.53-.01-1.55-.3-2.31-.55-.93-.31-1.67-.47-1.61-1 .03-.27.4-.55 1.11-.84 4.35-1.89 7.25-3.14 8.7-3.74 4.14-1.72 5-2.02 5.55-2.03.12 0 .39.03.54.15.12.1.17.24.19.34.02.04.04.14.03.28z" /></svg>
+                </Link>
+                <Link href="https://www.facebook.com/share/1P23b2jCPR/" target="_blank" className="h-10 w-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary hover:text-black transition-all">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z" /></svg>
                 </Link>
               </div>
             </div>
