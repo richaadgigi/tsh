@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { spaceGrotesk, inter } from "@/lib/fonts";
@@ -6,6 +7,11 @@ import { Shield01Icon, StarIcon, SentIcon, UserGroupIcon, GlobeIcon, ZapIcon, Fa
 import Image from "next/image";
 import Link from "next/link";
 import ScrollReveal from "@/components/ScrollReveal";
+
+export const metadata: Metadata = {
+    title: "About Us | Trade Signal Hive",
+    description: "Learn about Trade Signal Hive. Built by experts, driven by mission to make cryptocurrency accessible, secure, and rewarding for everyone.",
+};
 
 export default function AboutPage() {
     return (

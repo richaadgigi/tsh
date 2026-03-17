@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { spaceGrotesk, inter } from "@/lib/fonts";
@@ -20,6 +21,30 @@ import { notFound } from "next/navigation";
 
 interface PageProps {
     params: Promise<{ ct_uid: string }>;
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+    const { ct_uid } = await params;
+    const response = await copyTraderApi.getCopyTraders();
+    const trader = response.data.find(t => t.ct_uid === ct_uid);
+
+    if (!trader) {
+        return {
+            title: "Trader Not Found | Trade Signal Hive",
+        };
+    }
+
+    const formattedProfit = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(Number(trader.ct_profit) || 0);
+
+    return {
+        title: `${trader.ct_name} - Copy Trader | Trade Signal Hive`,
+        description: `Copy ${trader.ct_name} on Trade Signal Hive. They have a ${trader.ct_win_rate}% win rate with ${formattedProfit} total profit. Join and copy this Elite Trader.`,
+        openGraph: {
+            title: `${trader.ct_name} - Copy Trader | Trade Signal Hive`,
+            description: `Join Trade Signal Hive to copy ${trader.ct_name}, an elite trader with a ${trader.ct_win_rate}% win rate.`,
+            images: [trader.ct_profile_url || "https://tradesignalhive.com/og-image.jpg"],
+        },
+    };
 }
 
 export default async function TraderProfilePage({ params }: PageProps) {
