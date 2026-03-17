@@ -109,7 +109,7 @@ export default async function TraderProfilePage({ params }: PageProps) {
                             </ScrollReveal>
                             <ScrollReveal variant="fade-left" delay={0.5}>
                                 <Link
-                                    href="/copy-trading"
+                                    href="https://app.tradesignalhive.com/dashboard/"
                                     className="border border-white/10 bg-white/5 backdrop-blur-md px-8 py-3.5 rounded-2xl font-black hover:bg-white/10 transition-all text-white/90 shadow-xl hover:scale-105 active:scale-95 text-sm md:text-base"
                                 >
                                     Back
