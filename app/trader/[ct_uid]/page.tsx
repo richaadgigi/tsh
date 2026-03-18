@@ -125,7 +125,7 @@ export default async function TraderProfilePage({ params }: PageProps) {
                         <div className="flex items-center gap-3 pb-6 flex-shrink-0">
                             <ScrollReveal variant="fade-left" delay={0.4}>
                                 <Link
-                                    href="https://app.tradesignalhive.com/auth/signup"
+                                    href={`https://app.tradesignalhive.com/dashboard/copy-trade?trader=${ct_uid}`}
                                     target="_blank"
                                     className="bg-white text-black px-8 py-3.5 rounded-2xl font-black hover:bg-white/90 transition-all flex items-center gap-2 shadow-2xl hover:scale-105 active:scale-95 text-sm md:text-base whitespace-nowrap"
                                 >
@@ -134,7 +134,7 @@ export default async function TraderProfilePage({ params }: PageProps) {
                             </ScrollReveal>
                             <ScrollReveal variant="fade-left" delay={0.5}>
                                 <Link
-                                    href="https://app.tradesignalhive.com/dashboard/"
+                                    href="/copy-trading"
                                     className="border border-white/10 bg-white/5 backdrop-blur-md px-8 py-3.5 rounded-2xl font-black hover:bg-white/10 transition-all text-white/90 shadow-xl hover:scale-105 active:scale-95 text-sm md:text-base"
                                 >
                                     Back

@@ -1,8 +1,12 @@
 /** @type {import('next').NextConfig} */
+import withStylexui from "@richaadgigi/stylexui/withStylexui";
 const nextConfig = {
     output: 'standalone',
     compress: true,
     poweredByHeader: false,
+    experimental: {
+        globalNotFound: true,
+    },
     images: {
         formats: ['image/avif', 'image/webp'],
         remotePatterns: [
@@ -33,4 +37,4 @@ const nextConfig = {
     },
 };
 
-export default nextConfig;
+export default withStylexui(nextConfig);

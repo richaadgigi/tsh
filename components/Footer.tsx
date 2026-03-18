@@ -16,12 +16,15 @@ export default function Footer() {
 
             <div className="md:col-span-4 space-y-8">
               <Link href="/" className="flex items-center gap-3">
-                <div className="relative w-36 h-36">
+                <div className="relative w-32 h-24">
                   <Image
                     src="https://res.cloudinary.com/xnyder/image/upload/v1743325093/crypto-trade-signal-hive/brand/new-ctsh-logo_motwjq.png"
                     alt="Trade Signal Hive Logo"
                     fill
-                    className="object-contain"
+                    style={{
+                      objectPosition: 'center',
+                      objectFit: 'contain'
+                    }}
                   />
                 </div>
               </Link>
