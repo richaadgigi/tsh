@@ -73,6 +73,7 @@ export default function RootLayout({
         <SmoothScroll>
           {children}
         </SmoothScroll>
+        <script src="//code.jivosite.com/widget/XwTEQbPc0i" async></script>
       </body>
     </html>
   );

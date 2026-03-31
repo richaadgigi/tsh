@@ -52,7 +52,7 @@ export const videos: Video[] = [
     },
     {
         uid: "tY4oD6fH9sC2wE7Q",
-        videoUrl: "https://res.cloudinary.com/xnyder/image/upload/v1773938722/tradesignalhive/videos/Slide_16_9_-_7_wuixfd.png",
+        videoUrl: "https://res.cloudinary.com/xnyder/video/upload/v1773956282/tradesignalhive/videos/How_Copy_Trading_Works_bszfus.mp4",
         title: "How Copy Trading Works!",
         description: "Discover the power of automated wealth generation through Copy Trading. This complete walkthrough covers how you can automatically mirror the winning trades of our top-performing experts in real-time. Learn how to allocate your capital, set risk parameters, and earn while you learn without ever needing to look at a chart.",
         tags: ["Tutorials"],
