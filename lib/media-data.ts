@@ -1,5 +1,5 @@
 export interface Video {
-    id: string;
+    uid: string;
     /** 
      * The direct URL to the video file.
      * TIP: For "Data Saving" (Automatic Quality Switching), use an HLS (.m3u8) URL.
@@ -8,11 +8,10 @@ export interface Video {
     videoUrl: string;
     title: string;
     description: string;
-    category: string;
+    tags: string[];
     thumbnail: string;
-    duration: string;
     views: string;
-    timestamp: string;
+    datetime: string;
     author: {
         name: string;
         avatar: string;
@@ -22,103 +21,78 @@ export interface Video {
 
 export const videos: Video[] = [
     {
-        id: "1",
-        videoUrl: "https://stream.mux.com/15koNbbh00lOk5g1QO7T1uR78l9H29K5X/m3u8",
-        title: "Mastering Market Psychology & Emotional Discipline",
-        description: "In this exclusive webinar, our lead trader discusses the crucial role of emotional discipline in trading. Learn how to identify FOMO, manage risk effectively, and build a winning mindset for long-term success.",
-        category: "Webinars",
-        thumbnail: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&q=80&w=1200",
-        duration: "45:20",
+        uid: "jghd820dv3XyZ12",
+        videoUrl: "https://res.cloudinary.com/xnyder/video/upload/v1773899818/tradesignalhive/videos/How_To_Deposit_CTSH_kmh6w7.mp4",
+        title: "How To Deposit Into Your Account",
+        description: "A comprehensive step-by-step guide on how to seamlessly deposit funds into your Trade Signal Hive account. Learn about the supported payment methods, transaction processing times, and robust security measures in place to ensure your capital is safe and ready for trading.",
+        tags: ["Tutorials"],
+        thumbnail: "https://res.cloudinary.com/xnyder/image/upload/v1773922087/tradesignalhive/videos/Slide_16_9_-_10_qtivbd.png",
         views: "124K views",
-        timestamp: "2 days ago",
+        datetime: "2026-03-17T12:00:00Z",
         author: {
-            name: "Ronald Kent John",
-            avatar: "https://i.pravatar.cc/150?u=Ronald",
+            name: "Trade Signal Hive",
+            avatar: "https://res.cloudinary.com/xnyder/image/upload/v1773928501/tradesignalhive/brand/web-app-manifest-512x512_qpytql.png",
             verified: true
         }
     },
     {
-        id: "2",
-        videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
-        title: "Top 5 Altcoins for the Next Bull Run",
-        description: "Analysis of the most promising altcoins with 10x potential in the upcoming market cycle.",
-        category: "Analysis",
-        thumbnail: "https://images.unsplash.com/photo-1621416894569-0f39ed31d247?auto=format&fit=crop&q=80&w=600",
-        duration: "12:45",
+        uid: "vBx9K2mPq5L1nZ8R",
+        videoUrl: "https://res.cloudinary.com/xnyder/video/upload/v1773899806/tradesignalhive/videos/How_To_Withdraw_CTSH_n2nzxg.mp4",
+        title: "How To Withdraw From Your Account",
+        description: "A comprehensive step-by-step guide on how to seamlessly withdraw funds from your Trade Signal Hive account. Learn about the supported withdrawal methods, transaction processing times, and robust security measures in place to ensure your capital is safe and ready for trading.",
+        tags: ["Tutorials"],
+        thumbnail: "https://res.cloudinary.com/xnyder/image/upload/v1773901691/tradesignalhive/videos/Slide_16_9_-_6_truaps.png",
         views: "89K views",
-        timestamp: "5 days ago",
-        author: { name: "Aura Wright", avatar: "https://i.pravatar.cc/150?u=Aura" }
+        datetime: "2026-03-14T15:30:00Z",
+        author: {
+            name: "Trade Signal Hive",
+            avatar: "https://res.cloudinary.com/xnyder/image/upload/v1773928501/tradesignalhive/brand/web-app-manifest-512x512_qpytql.png",
+            verified: true
+        }
     },
     {
-        id: "3",
-        videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
-        title: "How to use Trade Signal Hive Dashboard",
-        description: "A complete walkthrough of the platform features and how to maximize your trading signals.",
-        category: "Tutorials",
-        thumbnail: "https://images.unsplash.com/photo-1642104704074-907c0698cbd9?auto=format&fit=crop&q=80&w=600",
-        duration: "08:30",
+        uid: "tY4oD6fH9sC2wE7Q",
+        videoUrl: "https://res.cloudinary.com/xnyder/image/upload/v1773938722/tradesignalhive/videos/Slide_16_9_-_7_wuixfd.png",
+        title: "How Copy Trading Works!",
+        description: "Discover the power of automated wealth generation through Copy Trading. This complete walkthrough covers how you can automatically mirror the winning trades of our top-performing experts in real-time. Learn how to allocate your capital, set risk parameters, and earn while you learn without ever needing to look at a chart.",
+        tags: ["Tutorials"],
+        thumbnail: "https://res.cloudinary.com/xnyder/image/upload/v1773938722/tradesignalhive/videos/Slide_16_9_-_7_wuixfd.png",
         views: "21K views",
-        timestamp: "1 week ago",
-        author: { name: "Platform Updates", avatar: "https://res.cloudinary.com/xnyder/image/upload/v1743325093/crypto-trade-signal-hive/brand/new-ctsh-logo_motwjq.png" }
+        datetime: "2026-03-12T09:15:00Z",
+        author: {
+            name: "Trade Signal Hive",
+            avatar: "https://res.cloudinary.com/xnyder/image/upload/v1773928501/tradesignalhive/brand/web-app-manifest-512x512_qpytql.png",
+            verified: true
+        }
     },
     {
-        id: "4",
-        videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
-        title: "Live Trading Session: NFP Release",
-        description: "Watch as we trade the high-impact NFP news live on the charts.",
-        category: "Live Trading",
-        thumbnail: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&q=80&w=600",
-        duration: "1:24:10",
+        uid: "pM1uN8bV3cK5xZ2L",
+        videoUrl: "https://res.cloudinary.com/xnyder/video/upload/v1773938609/tradesignalhive/videos/Intorduction_to_AI_Trading_nlr3md.mp4",
+        title: "Introduction to AI Trading",
+        description: "Step into the future of finance with our comprehensive introduction to AI Trading. Learn how artificial intelligence and machine learning algorithms are revolutionizing market analysis by instantly recognizing historical patterns, executing high-probability setups at lightning speed, and completely removing human emotion to deliver consistent trading results.",
+        tags: ["Live Trading"],
+        thumbnail: "https://res.cloudinary.com/xnyder/image/upload/v1773938725/tradesignalhive/videos/Slide_16_9_-_8_lhl6yb.png",
         views: "34K views",
-        timestamp: "2 weeks ago",
-        author: { name: "Jason Pizzino", avatar: "https://i.pravatar.cc/150?u=Jason" }
+        datetime: "2026-03-05T14:45:00Z",
+        author: {
+            name: "Trade Signal Hive",
+            avatar: "https://res.cloudinary.com/xnyder/image/upload/v1773928501/tradesignalhive/brand/web-app-manifest-512x512_qpytql.png",
+            verified: true
+        }
     },
     {
-        id: "5",
-        videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
-        title: "Understanding Order Blocks & Liquidity",
-        description: "Advanced institutional trading concepts explained for retail traders.",
-        category: "Analysis",
-        thumbnail: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&q=80&w=600",
-        duration: "22:15",
+        uid: "mN2bV4cZ6xX8kL0J",
+        videoUrl: "https://res.cloudinary.com/xnyder/video/upload/v1773938713/tradesignalhive/videos/Intorduction_to_Self_Trading_ik3omd.mp4",
+        title: "Introduction to Self Trading",
+        description: "Master the foundational skills required to become a consistently profitable independent trader. This essential video breaks down core concepts including market structure, identifying support and resistance, building a robust trading plan, applying strict risk management, and developing the critical psychological discipline needed for successful self-trading.",
+        tags: ["Analysis"],
+        thumbnail: "https://res.cloudinary.com/xnyder/image/upload/v1773938727/tradesignalhive/videos/Slide_16_9_-_9_nqtazu.png",
         views: "56K views",
-        timestamp: "3 weeks ago",
-        author: { name: "Kathy Lien", avatar: "https://i.pravatar.cc/150?u=Kathy" }
-    },
-    {
-        id: "6",
-        videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
-        title: "Crypto Market Weekly Analysis",
-        description: "Breaking down the weekly price action for BTC and ETH.",
-        category: "Analysis",
-        thumbnail: "https://images.unsplash.com/photo-1621416894569-0f39ed31d247?auto=format&fit=crop&q=80&w=600",
-        duration: "18:40",
-        views: "42K views",
-        timestamp: "1 month ago",
-        author: { name: "Danielle Shay", avatar: "https://i.pravatar.cc/150?u=Danielle" }
-    },
-    {
-        id: "7",
-        videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
-        title: "Beginner's Guide to Risk Management",
-        description: "The most important skill in trading is not losing money. Learn how to protect your capital.",
-        category: "Tutorials",
-        thumbnail: "https://images.unsplash.com/photo-1642104704074-907c0698cbd9?auto=format&fit=crop&q=80&w=600",
-        duration: "15:20",
-        views: "112K views",
-        timestamp: "1 month ago",
-        author: { name: "Boris Schlossberg", avatar: "https://i.pravatar.cc/150?u=Boris" }
-    },
-    {
-        id: "8",
-        videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
-        title: "Exclusive Interview with Top Analyst",
-        description: "Diving deep into macro trends and global economy impacts on crypto.",
-        category: "Interviews",
-        thumbnail: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&q=80&w=600",
-        duration: "35:10",
-        views: "45K views",
-        timestamp: "2 months ago",
-        author: { name: "Kathy Lien", avatar: "https://i.pravatar.cc/150?u=Kathy" }
+        datetime: "2026-02-26T18:20:00Z",
+        author: {
+            name: "Trade Signal Hive",
+            avatar: "https://res.cloudinary.com/xnyder/image/upload/v1773928501/tradesignalhive/brand/web-app-manifest-512x512_qpytql.png",
+            verified: true
+        }
     }
 ];
